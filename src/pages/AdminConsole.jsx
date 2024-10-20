@@ -123,7 +123,7 @@ const AdminConsole = () => {
                {venues.map((venue) => (
                   <div
                      key={venue.id}
-                     className="bg-white min-w-[250px] rounded-lg shadow-md p-4 hover:shadow-lg transition-shadow "
+                     className="bg-white min-w-[250px] rounded-lg shadow-md p-4 hover:shadow-lg transition-shadow my-3"
                   >
                      <h3 className="text-lg font-bold">{venue.name}</h3>
                      <p>Status: {venue.status}</p>

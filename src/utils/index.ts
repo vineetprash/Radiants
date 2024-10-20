@@ -1,4 +1,4 @@
-export const DB_URL = "";
+export const DB_URL = "https://inventory-mtia.onrender.com/";
 
 export function decodeUser(jwt: string) {
    const name = "user";

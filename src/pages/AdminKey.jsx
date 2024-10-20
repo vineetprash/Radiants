@@ -17,10 +17,10 @@ const AdminKeyPage = () => {
    };
 
    return (
-      <div className="flex justify-center items-center h-screen bg-gray-100">
-         <div className="w-full max-w-sm p-4 bg-white rounded-lg shadow-md">
+      <div className="flex flex-col justify-center items-center h-screen bg-gray-100">
+         <div className="w-fit  p-4 justify-center items-center flex flex-col bg-white rounded-lg shadow-md">
             <h2 className="text-xl font-bold mb-4 text-center">Admin Login</h2>
-            <form onSubmit={handleSubmit} className="space-y-4">
+            <form onSubmit={handleSubmit} className="w-60 flex flex-col gap-3">
                <input
                   type="password"
                   value={adminKey}
@@ -31,11 +31,15 @@ const AdminKeyPage = () => {
                {error && <p className="text-red-500 text-sm">{error}</p>}
                <button
                   type="submit"
-                  className="w-full px-4 py-2 bg-accent1 text-white rounded-md hover:bg-accent2"
+                  className="w-full px-3 py-2 bg-accent1 text-white rounded-md hover:bg-accent2"
                >
                   Submit
                </button>
             </form>
+            <div className="w-60 mt-3 rounded border-blue-300 border bg-blue-200 p-4">
+               <p>Contact the admin to receive access</p>
+               <p className="font-semibold">admin@pccoepune.org</p>
+            </div>
          </div>
       </div>
    );
