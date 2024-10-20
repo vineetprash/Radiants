@@ -8,7 +8,6 @@ import AuthPage from "./pages/AuthPage";
 import AdminKeyPage from "./pages/AdminKey";
 import AdminConsole from "./pages/AdminConsole";
 import AuthRequired from "./protectors/AuthRequired";
-import HeroSection from "./components/Hero";
 
 const router = createBrowserRouter([
    {
@@ -48,6 +47,7 @@ const router = createBrowserRouter([
       ),
    },
 ]);
-createRoot(document.getElementById("root")).render(
-   <RouterProvider router={router} />
+
+createRoot(document.getElementById('root')).render(
+  <RouterProvider router={router} />
 );
