@@ -1,7 +1,6 @@
 # Team ID: 18
 # Team Name: Radiants
 
-## Inventory and Event Management System for PCCOE
 
 ### Description
 
