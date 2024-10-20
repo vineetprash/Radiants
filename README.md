@@ -1,129 +1,38 @@
-# Team ID: 18
-# Team Name: Radiants
-
-## Inventory and Event Management System for PCCOE
-
-### Description
-The Inventory and Event Management System is a comprehensive web-based platform designed specifically for Pimpri Chinchwad College of Engineering (PCCOE). This solution streamlines the entire process of event management and resource coordination within the institution. By automating event planning, venue and resource booking, and inter-departmental communication, the system significantly enhances operational efficiency.
-
-Key benefits include:
-- Centralized event advertisement and registration
-- Improved resource utilization
-- Reduced manual errors
-- Enhanced coordination between departments
-- Time-saving automated processes
-
-### Features
-1. **Inventory Management**: 
-   - Real-time tracking of event-related materials
-   - Automated alerts for low stock
-   - Usage history and trends analysis
-
-2. **Role-based Access**:
-   - Admin: Full system control and oversight
-   - Organizer: Event creation and management capabilities
-   - User: Event browsing and registration features
-
-3. **Event & Resource Booking**:
-   - Intuitive calendar interface for venue selection
-   - Automatic conflict detection and resolution
-   - Resource allocation and tracking
-
-4. **Permission Requests**:
-   - Streamlined workflow for seeking event approvals
-   - Status tracking for submitted requests
-   - Automated notifications for request updates
-
-5.  **Reporting and Analytics**:
-   - Event attendance tracking
-   - Resource utilization reports
-   - User engagement metrics
-
-### Tech Stack
-- **Frontend**: 
-  - React.js
-  - Redux for state management
-  - Material-UI for responsive design
-
-- **Backend**: 
-  - FastAPI (Python)
-
-- **Database**: 
-  - PostgreSQL (hosted on Supabase)
+# Inventory and event management system for PCCOE
 
 
-### Screenshots
-![Inventory Management](https://github.com/user-attachments/assets/45351b78-6d38-4372-b07b-67b1901fb963)
-*Figure 1: Inventory Management Dashboard*
+The solution is a web-based platform tailored for Pimpri Chinchwad College of Engineering (PCCOE) to streamline event management and resource coordination. The application automates the entire cycle of event planning, venue and resource booking, and communication across departments. Also acts as a centralised place for advertisement and registration of all events accross PCCOE
 
-![Role-based Access](https://github.com/user-attachments/assets/16ff6588-09c3-430f-8a35-49e298108247)
-*Figure 2: Role-based Access Control Panel*
+Key features include:
 
-![Permission Requests](https://github.com/user-attachments/assets/ab243df6-8edc-400b-afaa-963ad86b5d92)
-*Figure 3: Permission Request Interface*
+- Inventory Management: A real-time system to track and manage event-related materials, ensuring smooth procurement and usage tracking. <br/>
+  <img width="336" alt="{F979AC46-68C9-45E7-93B6-81F37D7AB13F}" src="https://github.com/user-attachments/assets/45351b78-6d38-4372-b07b-67b1901fb963">
+- Role based access: Assigned admin, organiser and user role for customised experience<br/>
+- <img width="552" alt="{7C3D71FA-FDD5-4C9E-89AD-133C3138F5DD}" src="https://github.com/user-attachments/assets/16ff6588-09c3-430f-8a35-49e298108247">
+- Event & Resource Booking: Allows staff and departments to book venues while automating approval processes and avoiding scheduling conflicts.
+- Permission Requests: Simplifies seeking permissions from faculty and administrators for organizing events.<br/>
+   <img width="212" alt="{FA03882B-D6E7-449F-B978-7568A3814AB0}" src="https://github.com/user-attachments/assets/ab243df6-8edc-400b-afaa-963ad86b5d92">
+- Automated Communication: Utilized google's calender api for sending notifications about registered events.
 
-### Deployed URL
-[Link to Deployed Solution]
+This centralized platform enhances coordination, reduces manual errors, and makes event planning more efficient, benefiting both staff and students.
 
-### Video URL
-[Link to Demo Video]
 
-### Installation and Setup
+# Technical details
 
-#### Prerequisites
-- Node.js (v14 or later)
-- Python (v3.8 or later)
-- PostgreSQL
+- Tech stack: React Js frontend, Fastapi backend and database is a postgres instance hosted on Supabase
+- This is the frontend repo, backend is present on https://github.com/tushar-badlani/Inventory
 
-#### Frontend Setup
-1. Clone the repository:
-   ```
-   git clone [frontend-repo-url]
-   cd [frontend-folder]
-   ```
-2. Install dependencies:
-   ```
-   npm install
-   ```
-3. Start the development server:
-   ```
-   npm run dev
-   ```
-
-#### Backend Setup
-1. Clone the backend repository:
-   ```
-   git clone https://github.com/tushar-badlani/Inventory
-   cd Inventory
-   ```
-2. Install dependencies:
-   ```
-   pip install .
-   ```
-3. Navigate to the app directory and start the server:
-   ```
-   cd app
-   uvicorn main:app --reload
-   ```
-
-### Usage Guide
-1. **User Registration**: Navigate to the signup page and create an account.
-2. **Logging In**: Use your credentials to log into the system.
-3. **Creating an Event**: 
-   - Click on "Create Event" in the dashboard
-   - Fill in event details, select venue, and request resources
-   - Submit for approval
-4. **Booking Resources**: 
-   - Go to the "Resources" tab
-   - Select required items and quantities
-   - Choose dates for reservation
-5. **Viewing Analytics**: Access the "Reports" section for insights on event performance and resource utilization.
-
-### Contributing
-We welcome contributions to improve the Inventory and Event Management System. Please follow these steps:
-1. Fork the repository
-2. Create a new branch (`git checkout -b feature/AmazingFeature`)
-3. Commit your changes (`git commit -m 'Add some AmazingFeature'`)
-4. Push to the branch (`git push origin feature/AmazingFeature`)
-5. Open a Pull Request
+# Usage
+- Clone this and the backend repo in a folder
+- In frontend folder, run the following command
+  ```
+  npm install
+  npm run dev
+  ```
+- To start the backend, open the terminal in Inventory folder
+  ```
+  pip install .
+  cd app
+  uvicorn main:app --reload
+  ```
 
