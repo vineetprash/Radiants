@@ -9,7 +9,7 @@
 
 The solution is a web-based platform tailored for Pimpri Chinchwad College of Engineering (PCCOE) to streamline event management and resource coordination. The application automates the entire cycle of event planning, venue and resource booking, and communication across departments. Also acts as a centralised place for advertisement and registration of all events accross PCCOE
 
-## Deployed URL: pccoe.iem.vercel.app
+## Deployed URL: pccoeiem.vercel.app
 
 ## Video URL:
 
