@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { useLocation } from 'react-router-dom';
 import axios from 'axios';
 
-const Events = () => {
+const EventDetails = () => {
   const location = useLocation();
   const [eventId, setEventId] = useState(null);
   const [event, setEvent] = useState(null);
@@ -80,4 +80,4 @@ const Events = () => {
   );
 };
 
-export default Events;
+export default EventDetails;
