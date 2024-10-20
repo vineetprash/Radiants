@@ -9,12 +9,11 @@
 
 The solution is a web-based platform tailored for Pimpri Chinchwad College of Engineering (PCCOE) to streamline event management and resource coordination. The application automates the entire cycle of event planning, venue and resource booking, and communication across departments. Also acts as a centralised place for advertisement and registration of all events accross PCCOE
 
-Deployed URL: pccoe.iem.vercel.app
+## Deployed URL: pccoe.iem.vercel.app
 
-Video URL:
+## Video URL:
 
-
-Key features include:
+## Key features include:
 
 - Inventory Management: A real-time system to track and manage event-related materials, ensuring smooth procurement and usage tracking. <br/>
   <img width="336" alt="{F979AC46-68C9-45E7-93B6-81F37D7AB13F}" src="https://github.com/user-attachments/assets/45351b78-6d38-4372-b07b-67b1901fb963">
@@ -33,7 +32,7 @@ This centralized platform enhances coordination, reduces manual errors, and make
 - Tech stack: React Js frontend, Fastapi backend and database is a postgres instance hosted on Supabase
 - This is the frontend repo, backend is present on https://github.com/tushar-badlani/Inventory
 
-# Usage
+## Run commands
 - Clone this and the backend repo in a folder
 - In frontend folder, run the following command
   ```
