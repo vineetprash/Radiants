@@ -7,7 +7,7 @@ const Navbar = () => {
       <div className="container mx-auto flex justify-between items-center">
         <Link to="/" className="flex items-center">
           <img src="http://www.pccoepune.com/images/pccoe-logo-new.webp" alt="Logo" className="h-12 mr-2" /> 
-          <h1 className="text-xl font-bold">MyApp</h1>
+          <h1 className="text-xl font-bold">IEM</h1>
         </Link>
         <ul className="flex space-x-4">
           <li>

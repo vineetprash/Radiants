@@ -11,7 +11,7 @@ const NewEvent = () => {
     endDate: new Date().toISOString().split('T')[0],
     startTime: '09:00',
     endTime: '17:00',
-    venue: '',
+    expectedAttendance: '',
   });
 
   const [events, setEvents] = useState([]);
@@ -36,7 +36,7 @@ const NewEvent = () => {
       end_date: new Date(`${formData.endDate}T${formData.endTime}:00Z`).toISOString(),
       type: 'General',
       logo: '',
-      expected_attendance: formData.expectedAttendance
+      expected_attendance: formData.expectedAttendance,
     };
 
     try {
@@ -58,7 +58,6 @@ const NewEvent = () => {
         endDate: '',
         startTime: '09:00',
         endTime: '17:00',
-        venue: '',
         expectedAttendance: '',
       });
     } catch (error) {
@@ -71,141 +70,164 @@ const NewEvent = () => {
 
   return (
     <div className="container mx-auto py-10">
-  <div className="border-b border-gray-300 mb-6">
-    <nav className="flex space-x-4">
-      <button
-        className={`text-lg font-medium py-2 px-4 ${
-          tabValue === 0 ? 'border-b-2 border-indigo-500 text-indigo-600' : 'text-gray-600'
-        }`}
-        onClick={() => setTabValue(0)}
-      >
-        Create Event
-      </button>
-      <button
-        className={`text-lg font-medium py-2 px-4 ${
-          tabValue === 1 ? 'border-b-2 border-indigo-500 text-indigo-600' : 'text-gray-600'
-        }`}
-        onClick={() => setTabValue(1)}
-      >
-        View Events
-      </button>
-    </nav>
-  </div>
-
-  {tabValue === 0 && (
-    <div className="bg-white rounded-lg shadow-lg p-8">
-      <h2 className="text-2xl font-semibold mb-4">Create New Event</h2>
-      <p className="text-gray-500 mb-8">Fill in the details to request a new event booking</p>
-
-      <form onSubmit={handleSubmit}>
-  <div className="grid grid-cols-1 gap-6 mb-6">
-    {/* Existing fields */}
-    <div>
-      <label className="block text-sm font-medium text-gray-700 mb-2">Event Name</label>
-      <input
-        type="text"
-        value={formData.eventName}
-        onChange={(e) => handleInputChange('eventName', e.target.value)}
-        className="w-full border-gray-300 rounded-md shadow-sm focus:border-indigo-500 focus:ring-indigo-500 p-2"
-        placeholder="Enter event name"
-        required
-      />
-    </div>
-
-    <div>
-      <label className="block text-sm font-medium text-gray-700 mb-2">Description</label>
-      <textarea
-        value={formData.description}
-        onChange={(e) => handleInputChange('description', e.target.value)}
-        rows={3}
-        className="w-full border-gray-300 rounded-md shadow-sm focus:border-indigo-500 focus:ring-indigo-500 p-2"
-        placeholder="Enter event description"
-        required
-      />
-    </div>
-
-    <div>
-      <label className="block text-sm font-medium text-gray-700 mb-2">Expected Attendance</label>
-      <input
-        type="number"
-        value={formData.expectedAttendance}
-        onChange={(e) => handleInputChange('expectedAttendance', e.target.value)}
-        className="w-full border-gray-300 rounded-md shadow-sm focus:border-indigo-500 focus:ring-indigo-500 p-2"
-        placeholder="Enter expected number of attendees"
-        required
-      />
-    </div>
-
-    <div className="grid grid-cols-2 gap-6">
-      <div>
-        <label className="block text-sm font-medium text-gray-700 mb-2">Start Date</label>
-        <input
-          type="date"
-          value={formData.startDate}
-          onChange={(e) => handleInputChange('startDate', e.target.value)}
-          className="w-full border-gray-300 rounded-md shadow-sm focus:border-indigo-500 focus:ring-indigo-500 p-2"
-          required
-        />
+      <div className="border-b border-gray-300 mb-6">
+        <nav className="flex space-x-4">
+          <button
+            className={`text-lg font-medium py-2 px-4 ${
+              tabValue === 0 ? 'border-b-2 border-indigo-500 text-indigo-600' : 'text-gray-600'
+            }`}
+            onClick={() => setTabValue(0)}
+          >
+            Create Event
+          </button>
+          <button
+            className={`text-lg font-medium py-2 px-4 ${
+              tabValue === 1 ? 'border-b-2 border-indigo-500 text-indigo-600' : 'text-gray-600'
+            }`}
+            onClick={() => setTabValue(1)}
+          >
+            View Events
+          </button>
+        </nav>
       </div>
-      <div>
-        <label className="block text-sm font-medium text-gray-700 mb-2">End Date</label>
-        <input
-          type="date"
-          value={formData.endDate}
-          onChange={(e) => handleInputChange('endDate', e.target.value)}
-          className="w-full border-gray-300 rounded-md shadow-sm focus:border-indigo-500 focus:ring-indigo-500 p-2"
-          required
-        />
-      </div>
-    </div>
-  </div>
 
-  <button
-    type="submit"
-    className="w-full py-3 bg-indigo-600 text-white font-semibold rounded-lg hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500"
-  >
-    Submit Event Request
-  </button>
-</form>
+      {tabValue === 0 && (
+        <div className="bg-white rounded-lg shadow-lg p-8">
+          <h2 className="text-2xl font-semibold mb-4">Create New Event</h2>
+          <p className="text-gray-500 mb-8">Fill in the details to request a new event booking</p>
 
-    </div>
-  )}
+          <form onSubmit={handleSubmit}>
+            <div className="grid grid-cols-1 gap-6 mb-6">
+              {/* Existing fields */}
+              <div>
+                <label className="block text-sm font-medium text-gray-700 mb-2">Event Name</label>
+                <input
+                  type="text"
+                  value={formData.eventName}
+                  onChange={(e) => handleInputChange('eventName', e.target.value)}
+                  className="w-full border-gray-300 rounded-md shadow-sm focus:border-indigo-500 focus:ring-indigo-500 p-2"
+                  placeholder="Enter event name"
+                  required
+                />
+              </div>
 
-  {tabValue === 1 && (
-    <div className="mt-8">
-      {events.length === 0 ? (
-        <p className="text-center text-gray-500">No events submitted yet.</p>
-      ) : (
-        events.map((event, index) => (
-          <div key={index} className="bg-white rounded-lg shadow-md p-4 mb-4">
-            <h3 className="text-lg font-semibold">{event.title}</h3>
-            <span
-              className={`inline-block px-2 py-1 rounded-full text-xs font-medium ${
-                event.status === 'pending' ? 'bg-yellow-200 text-yellow-800' : 'bg-green-200 text-green-800'
-              }`}
+              <div>
+                <label className="block text-sm font-medium text-gray-700 mb-2">Description</label>
+                <textarea
+                  value={formData.description}
+                  onChange={(e) => handleInputChange('description', e.target.value)}
+                  rows={3}
+                  className="w-full border-gray-300 rounded-md shadow-sm focus:border-indigo-500 focus:ring-indigo-500 p-2"
+                  placeholder="Enter event description"
+                  required
+                />
+              </div>
+
+              <div>
+                <label className="block text-sm font-medium text-gray-700 mb-2">Expected Attendance</label>
+                <input
+                  type="number"
+                  value={formData.expectedAttendance}
+                  onChange={(e) => handleInputChange('expectedAttendance', e.target.value)}
+                  className="w-full border-gray-300 rounded-md shadow-sm focus:border-indigo-500 focus:ring-indigo-500 p-2"
+                  placeholder="Enter expected number of attendees"
+                  required
+                />
+              </div>
+
+              <div className="grid grid-cols-2 gap-6">
+                <div>
+                  <label className="block text-sm font-medium text-gray-700 mb-2">Start Date</label>
+                  <input
+                    type="date"
+                    value={formData.startDate}
+                    onChange={(e) => handleInputChange('startDate', e.target.value)}
+                    className="w-full border-gray-300 rounded-md shadow-sm focus:border-indigo-500 focus:ring-indigo-500 p-2"
+                    required
+                  />
+                </div>
+                <div>
+                  <label className="block text-sm font-medium text-gray-700 mb-2">End Date</label>
+                  <input
+                    type="date"
+                    value={formData.endDate}
+                    onChange={(e) => handleInputChange('endDate', e.target.value)}
+                    className="w-full border-gray-300 rounded-md shadow-sm focus:border-indigo-500 focus:ring-indigo-500 p-2"
+                    required
+                  />
+                </div>
+              </div>
+
+              <div className="grid grid-cols-2 gap-6">
+                <div>
+                  <label className="block text-sm font-medium text-gray-700 mb-2">Start Time</label>
+                  <input
+                    type="time"
+                    value={formData.startTime}
+                    onChange={(e) => handleInputChange('startTime', e.target.value)}
+                    className="w-full border-gray-300 rounded-md shadow-sm focus:border-indigo-500 focus:ring-indigo-500 p-2"
+                    required
+                  />
+                </div>
+                <div>
+                  <label className="block text-sm font-medium text-gray-700 mb-2">End Time</label>
+                  <input
+                    type="time"
+                    value={formData.endTime}
+                    onChange={(e) => handleInputChange('endTime', e.target.value)}
+                    className="w-full border-gray-300 rounded-md shadow-sm focus:border-indigo-500 focus:ring-indigo-500 p-2"
+                    required
+                  />
+                </div>
+              </div>
+            </div>
+
+            <button
+              type="submit"
+              className="w-full py-3 bg-indigo-600 text-white font-semibold rounded-lg hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500"
             >
-              {event.status}
-            </span>
-            <p className="text-sm text-gray-500 mt-2">
-              Date: {new Date(event.start_date).toLocaleDateString()} to {new Date(event.end_date).toLocaleDateString()}
-            </p>
-          </div>
-        ))
+              Submit Event Request
+            </button>
+          </form>
+        </div>
+      )}
+
+      {tabValue === 1 && (
+        <div className="mt-8">
+          {events.length === 0 ? (
+            <p className="text-center text-gray-500">No events submitted yet.</p>
+          ) : (
+            events.map((event, index) => (
+              <div key={index} className="bg-white rounded-lg shadow-md p-4 mb-4">
+                <h3 className="text-lg font-semibold">{event.title}</h3>
+                <span
+                  className={`inline-block px-2 py-1 rounded-full text-xs font-medium ${
+                    event.status === 'pending' ? 'bg-yellow-200 text-yellow-800' : 'bg-green-200 text-green-800'
+                  }`}
+                >
+                  {event.status}
+                </span>
+                <p className="text-sm text-gray-500 mt-2">
+                  Date: {new Date(event.start_date).toLocaleDateString()} to {new Date(event.end_date).toLocaleDateString()}
+                  <br />
+                  {/* Venue: {event.venue} */}
+                </p>
+              </div>
+            ))
+          )}
+        </div>
+      )}
+
+      {openSnackbar && (
+        <div
+          className={`fixed bottom-4 right-4 bg-${
+            snackbarSeverity === 'success' ? 'green' : 'red'
+          }-600 text-white px-4 py-3 rounded shadow-lg`}
+        >
+          <p>{snackbarMessage}</p>
+        </div>
       )}
     </div>
-  )}
-
-  {openSnackbar && (
-    <div
-      className={`fixed bottom-4 right-4 bg-${
-        snackbarSeverity === 'success' ? 'green' : 'red'
-      }-600 text-white px-4 py-3 rounded shadow-lg`}
-    >
-      <p>{snackbarMessage}</p>
-    </div>
-  )}
-</div>
-
   );
 };
 

@@ -6,6 +6,7 @@ import Landing from './components/Landing';
 import EventDetails from './components/Events';
 import Layout from './components/Layout'; 
 import Events from './components/Events';
+import Venue from './components/Venue';
 
 const router = createBrowserRouter([
   {
@@ -27,6 +28,10 @@ const router = createBrowserRouter([
       {
         path:'events',
         element: <Events/>,
+      },
+      {
+        path:'venues',
+        element: <Venue/>,
       }
     ],
   },
