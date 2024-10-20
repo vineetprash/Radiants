@@ -1,7 +1,9 @@
 import { createRoot } from "react-dom/client";
 import "./index.css";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
-import Permission from "./components/Permission";
+import NewEvent from "./components/NewEvent";
+import Landing from "./components/Landing";
+import EventDetails from "./components/Event";
 import AuthPage from "./pages/AuthPage";
 import AdminKeyPage from "./pages/AdminKey";
 import AdminConsole from "./pages/AdminConsole";
@@ -10,10 +12,19 @@ import AuthRequired from "./protectors/AuthRequired";
 const router = createBrowserRouter([
    {
       path: "/",
+      element: <Landing />,
+   },
+   {
+      path: "/event/:id",
+      element: <EventDetails />,
+   },
+   {
+      path: "/newevent",
+      element: <NewEvent />,
    },
    {
       path: "/permission",
-      element: <Permission />,
+      element: <NewEvent />,
    },
    {
       path: "/auth",

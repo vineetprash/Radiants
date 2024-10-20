@@ -12,6 +12,9 @@ export default {
             danger1: "#db504a",
             danger2: "#FA4943",
          },
+         fontFamily: {
+            inter: ["Inter", "sans-serif"],
+         },
       },
    },
    plugins: [],
