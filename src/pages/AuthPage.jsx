@@ -55,7 +55,7 @@ const AuthPage = () => {
                password: formData.password,
             });
          } else {
-            const userData = await axios.post(DB_URL + "users/", {
+            await axios.post(DB_URL + "users/", {
                full_name: formData.fullName,
                email: formData.email,
                password: formData.password,
@@ -206,7 +206,7 @@ const AuthPage = () => {
                   <p className="mt-4 flex gap-2 text-sm text-gray-600">
                      {isLogin ? (
                         <>
-                           Don't have an account?{" "}
+                           Don&apos;t have an account?{" "}
                            <button
                               onClick={toggleAuthMode}
                               className="text-accent1 hover:underline focus:outline-none"
