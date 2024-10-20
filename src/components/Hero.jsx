@@ -36,7 +36,7 @@ const HeroSection = () => {
                      onClick={() => {
                         navigate("/auth");
                      }}
-                     className="border border-accent text-accent font-light py-3 px-6 rounded-lg hover:font-medium transition duration-300"
+                     className="border border-accent1 text-accent1 font-light py-3 px-6 rounded-lg hover:font-medium transition duration-300"
                   >
                      Login
                   </button>
