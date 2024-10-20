@@ -1,3 +1,10 @@
+# Team ID: 18
+# Team Name: Radiants
+
+## Inventory and Event Management System for PCCOE
+
+### Description
+
 # Inventory and event management system for PCCOE
 
 
@@ -35,4 +42,24 @@ This centralized platform enhances coordination, reduces manual errors, and make
   cd app
   uvicorn main:app --reload
   ```
+### Usage Guide
+1. **User Registration**: Navigate to the signup page and create an account.
+2. **Logging In**: Use your credentials to log into the system.
+3. **Creating an Event**: 
+   - Click on "Create Event" in the dashboard
+   - Fill in event details, select venue, and request resources
+   - Submit for approval
+4. **Booking Resources**: 
+   - Go to the "Resources" tab
+   - Select required items and quantities
+   - Choose dates for reservation
+5. **Viewing Analytics**: Access the "Reports" section for insights on event performance and resource utilization.
+
+### Contributing
+We welcome contributions to improve the Inventory and Event Management System. Please follow these steps:
+1. Fork the repository
+2. Create a new branch (`git checkout -b feature/AmazingFeature`)
+3. Commit your changes (`git commit -m 'Add some AmazingFeature'`)
+4. Push to the branch (`git push origin feature/AmazingFeature`)
+5. Open a Pull Request
 
