@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import axios from 'axios';
 
-const EventPermissionComponent = () => {
+const NewEvent = () => {
   const [formData, setFormData] = useState({
     eventName: '',
     description: '',
@@ -209,4 +209,4 @@ const EventPermissionComponent = () => {
   );
 };
 
-export default EventPermissionComponent;
+export default NewEvent;

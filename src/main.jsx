@@ -2,7 +2,7 @@
 import { createRoot } from 'react-dom/client'
 import './index.css'
 import { createBrowserRouter, RouterProvider } from 'react-router-dom'
-import Permission from './components/Permission'
+import NewEvent from './components/NewEvent'
 import Landing from './components/Landing'
 import EventDetails from './components/Event'
 
@@ -17,8 +17,8 @@ const router = createBrowserRouter([
     element: <EventDetails />
   },
   {
-    path:'/permission',
-    element: <Permission/>
+    path:'/newevent',
+    element: <NewEvent/>
   }
 ])
 createRoot(document.getElementById('root')).render(
