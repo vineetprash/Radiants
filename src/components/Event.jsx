@@ -1,6 +1,6 @@
-import React, { useEffect, useState } from 'react';
-import { useLocation } from 'react-router-dom';
-import axios from 'axios';
+import { useEffect, useState } from "react";
+import { useLocation } from "react-router-dom";
+import axios from "axios";
 
 const EventDetails = () => {
   const location = useLocation();
@@ -8,17 +8,18 @@ const EventDetails = () => {
   const [event, setEvent] = useState(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
-  const API_BASE_URL = 'https://inventory-mtia.onrender.com'; 
+  const API_BASE_URL = "https://inventory-mtia.onrender.com";
 
   const dummyEventData = {
     title: "Sample Event Title",
-    description: "This is a sample event description to demonstrate loading state.",
+    description:
+      "This is a sample event description to demonstrate loading state.",
     organizer: {
       full_name: "ACM",
     },
     type: "Workshop",
     start_date: new Date().toISOString(),
-    end_date: new Date(new Date().getTime() + 3600 * 1000).toISOString(), 
+    end_date: new Date(new Date().getTime() + 3600 * 1000).toISOString(),
     venue: "Sample Venue",
   };
 
@@ -26,7 +27,6 @@ const EventDetails = () => {
     if (location.state && location.state.id) {
       setEventId(location.state.id);
     } else {
-      
       setLoading(false);
     }
   }, [location.state]);
@@ -38,8 +38,8 @@ const EventDetails = () => {
           const response = await axios.get(`${API_BASE_URL}/events/${eventId}`);
           setEvent(response.data);
         } catch (error) {
-          console.error('Error fetching event data:', error);
-          setError('Failed to fetch event data.');
+          console.error("Error fetching event data:", error);
+          setError("Failed to fetch event data.");
         } finally {
           setLoading(false);
         }
@@ -53,10 +53,10 @@ const EventDetails = () => {
     if (loading && !event) {
       setEvent(dummyEventData);
     }
-  }, [loading, event]); 
+  }, [loading, event]);
 
   if (loading) {
-    return <div>Loading...</div>; 
+    return <div>Loading...</div>;
   }
 
   if (error) {
@@ -71,11 +71,22 @@ const EventDetails = () => {
     <div className="p-6">
       <h1 className="text-2xl font-bold">{event.title}</h1>
       <p className="mt-4">{event.description}</p>
-      <p className="mt-2"><strong>Organizer:</strong> {event.organizer?.full_name || 'N/A'}</p>
-      <p className="mt-2"><strong>Type:</strong> {event.type || 'N/A'}</p>
-      <p className="mt-2"><strong>Start Date:</strong> {new Date(event.start_date).toLocaleString()}</p>
-      <p className="mt-2"><strong>End Date:</strong> {new Date(event.end_date).toLocaleString()}</p>
-      <p className="mt-2"><strong>Venue:</strong> {event.venue || 'N/A'}</p>
+      <p className="mt-2">
+        <strong>Organizer:</strong> {event.organizer?.full_name || "N/A"}
+      </p>
+      <p className="mt-2">
+        <strong>Type:</strong> {event.type || "N/A"}
+      </p>
+      <p className="mt-2">
+        <strong>Start Date:</strong>{" "}
+        {new Date(event.start_date).toLocaleString()}
+      </p>
+      <p className="mt-2">
+        <strong>End Date:</strong> {new Date(event.end_date).toLocaleString()}
+      </p>
+      <p className="mt-2">
+        <strong>Venue:</strong> {event.venue || "N/A"}
+      </p>
     </div>
   );
 };

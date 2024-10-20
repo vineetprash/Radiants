@@ -9,44 +9,49 @@ import AdminKeyPage from "./pages/AdminKey";
 import AdminConsole from "./pages/AdminConsole";
 import AuthRequired from "./protectors/AuthRequired";
 import HeroSection from "./components/Hero";
+import VenueCards from "./components/Venue";
 const router = createBrowserRouter([
-   {
-      path: "/",
-      element: <HeroSection />,
-   },
-   {
-      path: "/events",
-      element: <Landing />,
-   },
-   {
-      path: "/event/:id",
-      element: <EventDetails />,
-   },
-   {
-      path: "/newevent",
-      element: <NewEvent />,
-   },
-   {
-      path: "/permission",
-      element: <NewEvent />,
-   },
-   {
-      path: "/auth",
-      element: <AuthPage />,
-   },
-   {
-      path: "/adminkey",
-      element: <AdminKeyPage />,
-   },
-   {
-      path: "/console",
-      element: (
-         <AuthRequired>
-            <AdminConsole />,
-         </AuthRequired>
-      ),
-   },
+  {
+    path: "/",
+    element: <HeroSection />,
+  },
+  {
+    path: "/events",
+    element: <Landing />,
+  },
+  {
+    path: "/venues",
+    element: <VenueCards />,
+  },
+  {
+    path: "/event/:id",
+    element: <EventDetails />,
+  },
+  {
+    path: "/newevent",
+    element: <NewEvent />,
+  },
+  {
+    path: "/permission",
+    element: <NewEvent />,
+  },
+  {
+    path: "/auth",
+    element: <AuthPage />,
+  },
+  {
+    path: "/adminkey",
+    element: <AdminKeyPage />,
+  },
+  {
+    path: "/console",
+    element: (
+      <AuthRequired>
+        <AdminConsole />,
+      </AuthRequired>
+    ),
+  },
 ]);
 createRoot(document.getElementById("root")).render(
-   <RouterProvider router={router} />
+  <RouterProvider router={router} />
 );
